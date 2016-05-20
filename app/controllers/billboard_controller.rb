@@ -20,7 +20,12 @@ class BillboardController < ApplicationController
         @announcement = Announcement.find(params[:id])
         @announcement.update(announcement_params)
         redirect_to :action => :show, :id => @announcement
-end
+    end
+    def destroy
+        @announcement = Announcement.find(params[:id])
+        @announcement.destroy
+        redirect_to :action => :index
+    end
     
 private
     def announcement_params
