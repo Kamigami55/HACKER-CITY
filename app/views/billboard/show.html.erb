@@ -1,0 +1,5 @@
+<%= @announcement.title %>
+<%= @announcement.date %>
+<%= simple_format(@announcement.description) %>
+
+<p><%= link_to 'Back to index', :controller => 'billboard', :action => 'index' %></p>
