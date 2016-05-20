@@ -4,6 +4,7 @@ class BillboardController < ApplicationController
     end
     def  new
         @announcement = Announcement.new
+        @page_title = "HACKER CITY - Make a announcement"
     end
     def create
         @announcement = Announcement.new(announcement_params)
@@ -12,9 +13,11 @@ class BillboardController < ApplicationController
     end
     def show
         @announcement = Announcement.find(params[:id])
+        @page_title = "HACKER CITY - " + @announcement.title
     end
     def edit
         @announcement = Announcement.find(params[:id])
+        @page_title = "HACKER CITY - " + @announcement.title
     end
     def update
         @announcement = Announcement.find(params[:id])
