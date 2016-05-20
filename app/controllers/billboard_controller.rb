@@ -1,7 +1,7 @@
 class BillboardController < ApplicationController
     before_action :set_announcement, :only => [ :show, :edit, :update, :destroy]
     def index
-        @announcements = Announcement.all
+        @announcements = Announcement.page(params[:page]).per(5)
     end
     def  new
         @announcement = Announcement.new
