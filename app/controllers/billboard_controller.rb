@@ -1,4 +1,5 @@
 class BillboardController < ApplicationController
+    before_action :set_announcement, :only => [ :show, :edit, :update, :destroy]
     def index
         @announcements = Announcement.all
     end
@@ -12,20 +13,16 @@ class BillboardController < ApplicationController
         redirect_to :action => :index
     end
     def show
-        @announcement = Announcement.find(params[:id])
         @page_title = "HACKER CITY - " + @announcement.title
     end
     def edit
-        @announcement = Announcement.find(params[:id])
         @page_title = "HACKER CITY - " + @announcement.title
     end
     def update
-        @announcement = Announcement.find(params[:id])
         @announcement.update(announcement_params)
         redirect_to :action => :show, :id => @announcement
     end
     def destroy
-        @announcement = Announcement.find(params[:id])
         @announcement.destroy
         redirect_to :action => :index
     end
@@ -33,5 +30,8 @@ class BillboardController < ApplicationController
 private
     def announcement_params
         params.require(:announcement).permit(:title, :date,:description)
+    end
+    def set_announcement
+        @announcement = Announcement.find(params[:id])
     end
 end
