@@ -1,8 +1,16 @@
-    <%= f.label :title, "Title" %>
-    <%= f.text_field :title %>
+<%= f.label :title, "Title" %>
+<%= f.text_field :title %>
 
-    <%= f.label :date, "Date" %>
-    <%= f.text_field :date %>
+<%= f.label :date, "Date" %>
+<%= f.text_field :date %>
 
-    <%= f.label :description, "Description" %>
-    <%= f.text_area :description %> 
+<%= f.label :description, "Description" %>
+<%= f.text_area :description %> 
+
+<% if @announcement.errors.any? %>
+    <ul>
+        <% @announcement.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>

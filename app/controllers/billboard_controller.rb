@@ -9,8 +9,11 @@ class BillboardController < ApplicationController
     end
     def create
         @announcement = Announcement.new(announcement_params)
-        @announcement.save
-        redirect_to :action => :index
+        if @announcement.save
+            redirect_to :action => :index
+        else
+            render :action => :new
+        end
     end
     def show
         @page_title = "HACKER CITY - " + @announcement.title
@@ -19,8 +22,11 @@ class BillboardController < ApplicationController
         @page_title = "HACKER CITY - " + @announcement.title
     end
     def update
-        @announcement.update(announcement_params)
-        redirect_to :action => :show, :id => @announcement
+        if @announcement.update(announcement_params)
+            redirect_to :action => :show, :id => @announcement
+        else
+            render :action => :edit
+        end
     end
     def destroy
         @announcement.destroy
