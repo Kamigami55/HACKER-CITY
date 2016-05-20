@@ -1,3 +1,3 @@
 class Announcement < ActiveRecord::Base
-	validates_presence_of :title, :date
+	validates_presence_of :title
 end

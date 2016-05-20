@@ -3,11 +3,11 @@
 <ul>
 <% @announcements.each do |a| %>
   <li>
- 	  <%= a.title %>
-  <%= link_to 'Show', :controller => 'a', :action => 'show', :id => a %>
-  <%= link_to 'Edit', :controller => 'a', :action => 'edit', :id => a %>
-  <%= link_to 'Delete', :controller => 'a', :action => 'destroy', :id => a %>
+ <%= a.title %>
+  <%= link_to 'Show', :controller => 'billboard', :action => 'show', :id => a %>
+  <%= link_to 'Edit', :controller => 'billboard', :action => 'edit', :id => a %>
+  <%= link_to 'Delete', :controller => 'billboard', :action => 'destroy', :id => a %>
   </li>
 <% end %>
 </ul>
-<%= link_to 'New Event', :controller => 'a', :action => 'new' %>
+<%= link_to 'New Announcement', :controller => 'billboard', :action => 'new' %>
