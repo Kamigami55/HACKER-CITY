@@ -11,6 +11,7 @@ class BillboardController < ApplicationController
         @announcement = Announcement.new(announcement_params)
         if @announcement.save
             redirect_to :action => :index
+            flash[:notice] = "announcement was successfully created"
         else
             render :action => :new
         end
@@ -24,6 +25,7 @@ class BillboardController < ApplicationController
     def update
         if @announcement.update(announcement_params)
             redirect_to :action => :show, :id => @announcement
+            flash[:notice] = "event was successfully updated"
         else
             render :action => :edit
         end
@@ -31,6 +33,7 @@ class BillboardController < ApplicationController
     def destroy
         @announcement.destroy
         redirect_to :action => :index
+        flash[:alert] = "event was successfully deleted"
     end
     
 private
