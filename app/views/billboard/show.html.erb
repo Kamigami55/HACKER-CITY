@@ -1,6 +1,10 @@
-<%= @announcement.title %>
-<%= @announcement.date %>
-<%= simple_format(@announcement.description) %>
+<div id="index_header">
+    <span><%= @announcement.title %><span class="date"> - <%= @announcement.date || "Unknown" %></span></span>
+    <span><%= link_to 'Edit', edit_billboard_path(@announcement) %></span>
+</div>
+<div>
+    <%= simple_format(@announcement.description) %>
+    <div id="show_return"><%= link_to 'Return to index', billboard_index_path %></div>
+</div>
 
-<%= link_to 'Edit', edit_billboard_path(@announcement) %>
-<p><%= link_to 'Return to index', billboard_index_path %></p>
+

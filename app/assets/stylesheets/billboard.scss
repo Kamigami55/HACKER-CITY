@@ -62,7 +62,7 @@ a {
     background-color:  none;
     border: solid #ffffff 1px;
     text-decoration: none;
-    padding: 3px;
+    padding: 3px 6px;
     border-radius: 2px;
     font-size: 20px;
 }
@@ -94,7 +94,7 @@ a {
     text-align: center;
     position: absolute;
     bottom: 20px;
-    left: 320px;
+    left: 25vw;
 }
 .pagination .current {
     background-color: #66ffe0;
@@ -104,4 +104,8 @@ a {
     border-radius: 2px;
     font-size: 20px;
     margin-right: 3px;
+}
+#show_return {
+    position: absolute;
+    bottom: 20px;
 }
