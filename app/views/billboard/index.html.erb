@@ -1,13 +1,13 @@
 <h1>Welcome to HACKER CITY</h1>
 <%= paginate @announcements %>
 <ul>
-<% @announcements.each do |a| %>
-  <li>
- <%= a.title %>
-  <%= link_to 'Show', :controller => 'billboard', :action => 'show', :id => a %>
-  <%= link_to 'Edit', :controller => 'billboard', :action => 'edit', :id => a %>
-  <%= link_to 'Delete', :controller => 'billboard', :action => 'destroy', :id => a %>
+<% @announcements.each do |announcement| %>
+    <li>
+    <%= announcement.title %>
+    <%= link_to 'Show', billboard_path(announcement) %>
+    <%= link_to 'Edit', edit_billboard_path(announcement) %>
+    <%= button_to 'Delete', billboard_path(announcement), :method => :delete, :data => { :confirm => "Are you sure?" } %>
   </li>
 <% end %>
 </ul>
-<%= link_to 'New Announcement', :controller => 'billboard', :action => 'new' %>
+<%= link_to 'New Announcement', new_billboard_path %>

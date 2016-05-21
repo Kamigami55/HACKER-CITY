@@ -2,4 +2,5 @@
 <%= @announcement.date %>
 <%= simple_format(@announcement.description) %>
 
-<p><%= link_to 'Back to index', :controller => 'billboard', :action => 'index' %></p>
+<%= link_to 'Edit', edit_billboard_path(@announcement) %>
+<p><%= link_to 'Back to index', billboard_index_path %></p>

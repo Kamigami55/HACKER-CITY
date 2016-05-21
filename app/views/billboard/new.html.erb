@@ -1,5 +1,5 @@
-<%= form_for @announcement, :url => { :controller => 'billboard', :action => 'create' } do |f| %>
+<%= form_for @announcement, :url => billboard_index_path do |f| %>
     <%= render :partial => 'form', :locals => { :f => f } %>
     <%= f.submit "Create" %>
-    <%= link_to 'Back to index', :controller => 'billboard', :action => 'index' %>
+    <%= link_to 'Back to index', billboard_index_path %>
 <% end %>
