@@ -109,3 +109,29 @@ a {
     position: absolute;
     bottom: 20px;
 }
+input[type="text"] {
+    background-color: rgba(120,120,120,0.5);
+    border: none;
+    font-size: 20px;
+    height: 34px;
+    border-radius: 3px;
+    padding: 3px;
+}
+textarea {
+    background-color: rgba(120,120,120,0.5);
+    border: none;
+    font-size: 20px;
+    height: 90%;
+    width: 100%;
+    border-radius: 3px;
+    padding: 3px;
+    margin-top: 15px;
+}
+input[type="submit"] {
+    background-color:  #66ffe0;
+    border: none;
+    padding: 3px 6px;
+    border-radius: 2px;
+    font-size: 20px;
+    color: black;
+}
