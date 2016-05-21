@@ -1,5 +1,5 @@
 <%= form_for @announcement, :url => billboard_index_path do |f| %>
     <%= render :partial => 'form', :locals => { :f => f } %>
-    <%= f.submit "Create" %>
-    <%= link_to 'Back to index', billboard_index_path %>
+    <%= f.submit "Post" %>
+    <%= link_to 'Return to index', billboard_index_path %>
 <% end %>

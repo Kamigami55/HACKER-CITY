@@ -1,17 +1,17 @@
 class BillboardController < ApplicationController
     before_action :set_announcement, :only => [ :show, :edit, :update, :destroy]
     def index
-        @announcements = Announcement.page(params[:page]).per(5)
+        @announcements = Announcement.page(params[:page]).per(7)
     end
     def  new
         @announcement = Announcement.new
-        @page_title = "HACKER CITY - Make a announcement"
+        @page_title = "HACKER CITY - New announcement"
     end
     def create
         @announcement = Announcement.new(announcement_params)
         if @announcement.save
             redirect_to billboard_index_path
-            flash[:notice] = "announcement was successfully created"
+            flash[:notice] = "Post successfully."
         else
             render :action => :new
         end
@@ -25,7 +25,7 @@ class BillboardController < ApplicationController
     def update
         if @announcement.update(announcement_params)
             redirect_to billboard_url(@announcement)
-            flash[:notice] = "event was successfully updated"
+            flash[:notice] = "Update successfully."
         else
             render :action => :edit
         end
@@ -33,7 +33,7 @@ class BillboardController < ApplicationController
     def destroy
         @announcement.destroy
         redirect_to billboard_index_path
-        flash[:alert] = "event was successfully deleted"
+        flash[:alert] = "Delete successfully"
     end
     
 private

@@ -1,3 +1,107 @@
 // Place all the styles related to the billboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background-image: image-url("city.jpg");
+    background-size: cover cover;
+}
+
+#black_mask {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.1);
+    z-index: -1;
+}
+
+#flash {
+    position: fixed;
+    width: 20vw;
+    height: 4em;
+    background-color: rgba(0,0,0,0.7);
+    right: 2vw;
+    top: 2vh;
+}
+
+h1 {
+    text-align: center;
+    color: #66ffe0;
+    font-size: 4em;
+    margin: 0;
+}
+h2 {
+    text-align: center;
+    margin: 0;
+}
+
+#content {
+    position: relative;
+    margin: 0 auto;
+    width: 70vw;
+    height: 70vh;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 3vw;
+    padding: 15px;
+}
+
+.announcement {
+    padding: 0.5em 0 0.5em 0;
+    border-bottom: #ffffff 1px solid;
+    //border- #ffffff 1px solid;  
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    background-color:  none;
+    border: solid #ffffff 1px;
+    text-decoration: none;
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 20px;
+}
+
+.date {
+    color: #aaaaaa;
+    font-size: 18px;
+}
+
+.new {
+    border: none;
+    font-size: 24px;
+    background-color: #66ffe0;
+    color: black;
+}
+
+#index_header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    color: #66ffe0;
+    background-color: rgba(40,40,40,0.7);
+    border-radius: 5px 5px 0 0;
+    padding: 15px;
+    margin: -15px -15px 0 -15px;
+}
+.pagination {
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 320px;
+}
+.pagination .current {
+    background-color: #66ffe0;
+    color: black;
+    border: solid #ffffff 1px;
+    padding: 3px 0 3px 3px;
+    border-radius: 2px;
+    font-size: 20px;
+    margin-right: 3px;
+}

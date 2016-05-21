@@ -45,5 +45,6 @@ group :development do
   gem 'spring'
 
   gem "kaminari"
+  gem 'bootstrap-sass'
 end
 

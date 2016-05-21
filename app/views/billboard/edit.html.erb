@@ -1,6 +1,6 @@
 <%= form_for @announcement,  :url => billboard_path(@announcement) do |f| %>
     <%= render :partial => 'form', :locals => { :f => f } %>
     <%= f.submit "Update" %>
-    <%= link_to 'Back to this announcement', billboard_path(@announcement) %>
-    <%= link_to 'Back to index', billboard_index_path %>
+    <%= link_to 'Return to this announcement', billboard_path(@announcement) %>
+    <%= link_to 'Return to index', billboard_index_path %>
 <% end %>

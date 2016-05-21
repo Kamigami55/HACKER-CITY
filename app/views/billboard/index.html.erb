@@ -1,13 +1,20 @@
-<h1>Welcome to HACKER CITY</h1>
-<%= paginate @announcements %>
-<ul>
+<div id="index_header">
+    <span>What is new here</span>
+    <span><%= link_to 'Post new announcement', new_billboard_path, class: "new" %></span>
+</div>
+<div>
 <% @announcements.each do |announcement| %>
-    <li>
-    <%= announcement.title %>
-    <%= link_to 'Show', billboard_path(announcement) %>
-    <%= link_to 'Edit', edit_billboard_path(announcement) %>
-    <%= button_to 'Delete', billboard_path(announcement), :method => :delete, :data => { :confirm => "Are you sure?" } %>
-  </li>
-<% end %>
-</ul>
-<%= link_to 'New Announcement', new_billboard_path %>
+    <div class="announcement">
+        <span>
+            <%= announcement.title %> 
+            <span class="date"> - <%= announcement.date || "Unknown" %></span>
+        </span>
+        <span>
+            <%= link_to 'Check out', billboard_path(announcement) %>
+            <%= link_to 'Edit', edit_billboard_path(announcement) %>
+            <%= link_to 'Delete', billboard_path(announcement), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+        </span>
+    </div>
+    <% end %>
+    <%= paginate @announcements %>
+</div>

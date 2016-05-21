@@ -5,12 +5,22 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
-<p style="color: red"><%= flash[:alert] %></p>
-<%= yield %>
+<div id="black_mask"></div>
+<div id="flash">
+    <p style="color: green"><%= flash[:notice] %></p>
+    <p style="color: red"><%= flash[:alert] %></p>
+</div>
+
+<h2>This is</h2>
+<h1>HACKER CITY</h1>
+
+<div id="content">
+    <%= yield %>
+</div>
 
 </body>
 </html>
