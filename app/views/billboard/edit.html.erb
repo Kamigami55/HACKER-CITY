@@ -1,6 +1,20 @@
-<%= form_for @announcement,  :url => billboard_path(@announcement) do |f| %>
-    <%= render :partial => 'form', :locals => { :f => f } %>
-    <%= f.submit "Update" %>
-    <%= link_to 'Return to this announcement', billboard_path(@announcement) %>
-    <%= link_to 'Return to index', billboard_index_path %>
+<%= form_for @announcement, :url => billboard_path(@announcement) do |f| %>
+
+<div id="index_header">
+    <span><%= f.text_field :title, :placeholder => "Title" %> - <%= f.text_field :date, :placeholder => "Date" %></span>
+    <span><%= f.submit "Update" %></span>
+</div>
+<div>
+    <%= f.text_area :description, :rows => 15 %> 
+
+<!--        <% if @announcement.errors.any? %>
+            <ul>
+                <% @announcement.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        <% end %>-->
+
+    <div id="show_return"><%= link_to 'Return to this announcement', billboard_path(@announcement) %> <%= link_to 'Return to index', billboard_index_path %></div>
+</div>
 <% end %>
